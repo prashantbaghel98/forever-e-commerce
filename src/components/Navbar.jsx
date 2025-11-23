@@ -1,11 +1,13 @@
-import { React, useState } from 'react'
+import { React, useContext, useState } from 'react'
 import { assets } from '../assets/assets'
 import { NavLink, Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 
 const Navbar = () => {
 
   const [toggle, settoggle] = useState(true)
+  const {setShowSearch } = useContext(ShopContext)
 
 
   return (
@@ -40,7 +42,7 @@ const Navbar = () => {
 
       <div className="right-icon flex gap-5">
         <Link to="/">
-          <img src={assets.search_icon} alt="" className='size-5 cursor-pointer' />
+          <img onClick={()=>setShowSearch( true)} src={assets.search_icon} alt="" className='size-5 cursor-pointer' />
         </Link>
 
         <Link to="/">
