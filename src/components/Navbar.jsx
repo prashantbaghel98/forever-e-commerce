@@ -7,7 +7,7 @@ import { ShopContext } from '../context/ShopContext'
 const Navbar = () => {
 
   const [toggle, settoggle] = useState(true)
-  const {setShowSearch } = useContext(ShopContext)
+  const {setShowSearch, getCartCount } = useContext(ShopContext)
 
 
   return (
@@ -56,9 +56,9 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/cart">
           <img src={assets.cart_icon} alt="" className='size-5 relative' />
-          <p className='absolute text-[8px] top-5 sm:top-7 right-12  sm:right-34 leading-3 bg-red-800 text-amber-50 p-1 rounded-full'>10</p>
+          <p className='absolute text-[8px] top-5 sm:top-7 right-12  sm:right-34 leading-1.5 bg-red-800 text-amber-50 p-1 rounded-full'>{getCartCount()}</p>
         </Link>
         <img src={assets.menu_icon} alt="" onClick={() => settoggle(false)} className="sm:hidden size-5" />
       </div>
