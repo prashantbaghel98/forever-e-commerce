@@ -45,16 +45,16 @@ const Navbar = () => {
           <img onClick={()=>setShowSearch( true)} src={assets.search_icon} alt="" className='size-5 cursor-pointer' />
         </Link>
 
-        <Link to="/">
+       
           <div className='group cursor-pointer'>
-            <img src={assets.profile_icon} alt="" className='size-5 cursor-pointer' />
+           <Link to='/login'> <img src={assets.profile_icon} alt="" className='size-5 cursor-pointer' /></Link>
             <div className='text-gray-700  bg-gray-200 rounded-xl p-3  flex-col gap-2 group-hover:flex hidden absolute right-30 top-10 px-8'>
               <p className='cursor-pointer hover:text-black'>My Profile</p>
               <p className='cursor-pointer hover:text-black'>Orders</p>
               <p className='cursor-pointer hover:text-black'>Logout</p>
             </div>
           </div>
-        </Link>
+        
 
         <Link to="/cart">
           <img src={assets.cart_icon} alt="" className='size-5 relative' />
