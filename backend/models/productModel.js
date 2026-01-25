@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
         required:true,
     },
     image:{
-        type:Array,
+        type:Array,  
         required:true,
     },
     category:{
@@ -40,5 +40,4 @@ const productSchema = new mongoose.Schema({
 
 
 const productModel = mongoose.models.product || mongoose.model('product',productSchema);
-
-module.exports = productModel;
+export default productModel;

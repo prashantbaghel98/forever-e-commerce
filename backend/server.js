@@ -3,6 +3,8 @@ import cor from 'cors'
 import 'dotenv/config'
 import connectDB from'./config/db.js' 
 import connectCloudinary from './config/Cloudinary.js'
+import userRoute from './routes/userRoute.js'
+import productRouter from './routes/productRoute.js'
 
 
 
@@ -20,11 +22,21 @@ connectCloudinary();
 
 // Middleware
 
-app.use(express.json())
-app.use(cor())
+app.use(express.json());
+app.use(cor());
 
+// Middleware to parse urlencoded form-data
+app.use(express.urlencoded({ extended: true }));
 
 // End Point 
+
+app.use('/api/user',userRoute)
+app.use('/api/product',productRouter)
+
+ 
+
+
+
 app.get('/',(req,res)=>{
     res.send("API WORKING")
 })
